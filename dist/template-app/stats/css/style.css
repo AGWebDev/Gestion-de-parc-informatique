@@ -1,0 +1,58 @@
+section {
+  width: 100%;
+  position: realtive;
+  display: block;
+    margin-top: 0.5%;
+
+}
+
+.bg-alpha {
+  background-color: #EEEEEE;
+}
+
+section {
+  display: table;
+  width: 100%;
+}
+section > div {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3em 2em 1em;
+  margin: 0 auto;
+}
+
+.sect-content {
+  padding: 2em;
+}
+
+.graph-donut {
+  position: relative;
+  display: inline-block;
+  width: 10em;
+  height: 10em;
+    margin-left: 1.5%;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.graph-donut canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.percent {
+  display: inline-block;
+  font-size: 21px;
+  color: #222;
+  line-height: 152px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+.percent.no-percent:after {
+  content: '';
+}
