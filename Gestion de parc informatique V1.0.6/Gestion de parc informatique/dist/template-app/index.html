@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<!--
+
+Auteur : Alexandre Giel
+Nom : GPI
+Description : Application de gestion de parc informatique
+Version : 1.0.6
+
+-->
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+
+
+
+    <link rel="stylesheet" href="login/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="overlay">
+    </div>
+    <div class="leftcontent">
+        <span class="ltitle">Accèder à GPI</span>
+        <br>
+        <span class="lcontent">
+                Gestion du Parc Informatique
+            </span>
+    </div>
+    <div class="sidebar">
+        <center><span class="rtitle">Connexion GPI</span>
+            <br>
+            <br>
+            <br>
+            <form>
+                <input class="textinput" type="text" name="username" autofocus="autofocus" placeholder="Identifiant">
+                <br>
+                <br>
+                <input class="textinput" type="password" name="password" placeholder="Mot de passe">
+                <br>
+                <br>
+            </form>
+        </center>
+        <div class="w3-container">
+            <br>
+            <center><a href="accueil.html"><button class="w3-button w3-green" style="width:50%">Ce Connecter</button></a></center>
+            <br>
+            <br>
+            <button onclick="myFunction('Demo1')" class="w3-btn w3-block w3-white w3-left-align">    <li class="w3-bar">
+                    <span class="w3-bar-item w3-button w3-xlarge w3-right"><i class="fa fa-angle-down	"></i></span>
+                    <img src="https://www.w3schools.com/w3css/img_avatar3.png" class="w3-bar-item w3-circle" style="width:85px">
+                    <div class="w3-bar-item">
+                        <span class="w3-large">Administrateur</span><br>
+                        <span>Admin</span>
+                    </div>
+                    </li></button>
+            <div style="background-color: #F4F4F4;" id="Demo1" class="w3-container w3-hide ">
+                <br>
+                <center>
+                    <form>
+
+                        <input class="textinput" type="password" name="password" placeholder="Mot de passe">
+
+                        <a style="float: right" href="accueil.html">
+                            <i class="fa fa-sign-in" style="font-size:40px;color:black"></i>
+                        </a>
+
+                        <br>
+                        <br>
+                    </form>
+                </center>
+            </div>
+
+        </div>
+        <script>
+            function myFunction(id) {
+                var x = document.getElementById(id);
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+    </div>
+
+
+    <p class="w3-wide" style="color: white;position:fixed;bottom: 0;margin-left:0%;font-size: 75%;">&copy; Alexandre Giel</p>
+
+
+</body>
+
+</html>

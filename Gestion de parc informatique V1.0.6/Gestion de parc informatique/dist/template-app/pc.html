@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<!--
+
+Auteur : Alexandre Giel
+Nom : GPI
+Description : Application de gestion de parc informatique
+Version : 1.0.6
+
+-->
+
+<html>
+    <head>
+        <title>Gestion du parc informatique</title>
+        <link rel="icon" type="image/png" href="images/logo.png" />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="../css/photon.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+        <style>
+
+            .colonne{height: 40px;}
+            body{ 	font-family: 'Open Sans', sans-serif;
+            }
+
+        </style>
+        <script>
+            function recherche() {
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("myTable");
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+        <!-- Javascript -->
+        <script src="js/menu.js" charset="utf-8"></script>
+    </head>
+    <body onload="myFunction()" >
+        <div id="loader"></div>
+
+        <div  class="window">
+
+            <!-- .toolbar-header sits at the top of your app -->
+            <header class="toolbar toolbar-header">
+                <div class="w3-row">
+                    <div class="w3-col s12 w3-green w3-center"><p>Gestion du parc informatique <span style="float: right;margin-right: 2%;" ><a style="cursor: pointer;text-decoration: none;" href="index.html"><i class="fa fa-sign-out"></i> Déconnexion </a></span> </p></div>
+                </div>
+
+            </header>
+
+            <!-- Your app's content goes inside .window-content -->
+            <div class="window-content">
+                <div class="pane-group">
+                    <div class="pane pane-sm ">
+                        <div class="w3-sidebar w3-bar-block w3-#e1e1e1 w3-xlarge" style="width:60px">
+                            <a href="accueil.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
+                            <a href="pc.html" class="w3-bar-item w3-button"><i class="fa fa-laptop"></i></a> 
+                            <a href="serveurs.html" class="w3-bar-item w3-button"><i class="fa fa-server"></i></a> 
+                            <a href="imprimante.html" class="w3-bar-item w3-button"><i class="fa fa-print"></i></a>
+                            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash-o"></i></a> 
+                        </div>   
+
+                    </div>
+
+                    <div id="myDiv" class="pane"><br/>
+
+
+                        <input class="w3-input w3-border-white w3-padding" type="text" placeholder="Rechercher" id="myInput" onkeyup="recherche()"><br/>
+
+                        <table class="table-striped" id="myTable" >
+                            <thead>
+                                <tr style="height: 50px;" >
+                                    <th>Nom</th>
+                                    <th>Type</th>
+                                    <th>Marque</th>
+                                    <th>OS</th>
+                                    <th>Date mise en service</th>
+                                    <th>Propriétaire</th>
+                                    <th><input class="w3-check" type="checkbox" id="tous" value="tous" onclick="cocher(true);" ></th>
+
+                                </tr>
+                            </thead>
+                            <tbody   >
+                                <tr class="colonne">
+                                    <td>PC01</td>
+                                    <td>Portable</td>
+                                    <td>HP</td>
+                                    <td>Windows</td>
+                                    <td>Oct 13, 2016</td>
+                                    <td>Utilisateur</td>
+                                    <td><input class="w3-check"  id="sup" name="sup" value="sup" type="checkbox"></td>
+
+                                </tr>
+                                <tr class="colonne" >
+                                    <td>PC02</td>
+                                    <td>Fixe</td>
+                                    <td>HP</td>
+                                    <td>Windows</td>
+                                    <td>Oct 15, 2015</td>
+                                    <td>Utilisateur</td>
+                                    <td><input class="w3-check" id="sup1" name="sup1" value="sup1" type="checkbox"></td>
+
+                                </tr>
+                                <tr class="colonne">
+                                    <td>PC03</td>
+                                    <td>Fixe</td>
+                                    <td>Lenovo</td>
+                                    <td>Windows</td>
+                                    <td>jul 11, 2015</td>
+                                    <td>Utilisateur</td>
+                                    <td><input class="w3-check" id="sup2" name="sup2" value="sup2" type="checkbox"></td>
+                                </tr>
+                                <tr class="colonne">
+                                    <td>PC04</td>
+                                    <td>Fixe</td>
+                                    <td>Apple</td>
+                                    <td>Mac OSX Lion</td>
+                                    <td>Oct 13, 2015</td>
+                                    <td>Utilisateur</td>
+                                    <td><input class="w3-check" id="sup3" name="sup3" value="sup3" type="checkbox"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <div style="float:right;margin-right: 4%;" class="w3-dropdown-hover">
+                            <button class="w3-button">Options <i class="fa fa-angle-down"></i></button>
+                            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                                <a href="#" class="w3-bar-item w3-button">Supprimer</a>
+                                <a href="#" class="w3-bar-item w3-button">Déplacer</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="w3-right">
+                            <p></p>
+                            <div class="w3-bar w3-border w3-round">
+                                <a href="#" class="w3-bar-item w3-button">&laquo;</a>
+                                <a href="#" class="w3-bar-item w3-button">1</a>
+                                <a href="#" class="w3-bar-item w3-button">2</a>
+                                <a href="#" class="w3-bar-item w3-button">3</a>
+                                <a href="#" class="w3-bar-item w3-button">4</a>
+                                <a href="#" class="w3-bar-item w3-button">&raquo;</a>
+                            </div>
+                        </div>
+
+                        <button style="margin-left:1%" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">+</button>
+
+                        <div id="id01" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                                <header class="w3-container w3-green"> 
+                                    <span onclick="document.getElementById('id01').style.display='none'" 
+                                          class="w3-button w3-display-topright">&times;</span>
+                                </header>
+                                <div class="w3-container">
+                                    <br>
+                                    <center><button class="w3-bar-item w3-button w3-black">Exporter au format excel</button></center><br>
+                                    <center><a href="#" onclick="window.print(); return false;"><button class="w3-bar-item w3-button w3-black">&ensp;&ensp;&ensp;&ensp; Imprimer &ensp;&ensp;&ensp;&ensp;</button></a></center><br>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <p  class="w3-wide"  style="position: fixed;bottom: 0;margin-left:88%;font-size: 75%;" >&copy; Alexandre Giel</p>
+
+    </body>
+
+    <script>
+        function cocher(etat){
+            // Définition de la liste des checkbox à cocher / décocher
+            casesTab = new Array('sup','sup1','sup2','sup3');
+
+            for ( i = 0 ; i < casesTab.length ; i++ )
+            {
+                // On coche ou décoche selon l'état souhaité
+                document.getElementById(casesTab[i]).checked = etat;
+            }
+
+            if ( etat == true )
+            {
+                nvelEtat = false;
+            }
+            else
+            {
+                nvelEtat = true;
+            }
+
+            // On remplace l'évènement onclick pour décocher / cocher les cases
+            document.getElementById('tous').onclick = function(){ cocher(eval(nvelEtat)); }
+        }
+
+
+    </script>
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+
+    </script>
+
+</html>

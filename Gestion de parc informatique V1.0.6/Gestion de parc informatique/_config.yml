@@ -1,0 +1,13 @@
+# Meta data
+name:         GPI
+authors:      Alexandre Giel
+description:  Gestion de parc informatique
+
+# Dependencies
+highlighter:  vert
+
+
+# Server
+source:       
+port:         
+url:          
